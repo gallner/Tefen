@@ -70,10 +70,10 @@ Public Function FromFormToClass() As System
     
 70:    MySystem.BizDev = data(1, 10) & ", " & data(1, 11)               '"BizEnv"
     
-72:    If data(1, 12) = "open" Or data(1, 12) = "MF" Or data(1, 12) = "MF+OPEN" Then '"DevEnv"
+72:    If LCase(data(1, 12)) = "open" Or LCase(data(1, 12)) = "mf" Or LCase(data(1, 12)) = "mf+open" Then '"DevEnv"
 73:        MySystem.DevEnv = data(1, 12)
 74:    Else
-75:        ThrowError CustomError.INVALID_FORM_INPUT, "mdlPresentation.FromFormToClass", "Cell C10 contains illegal input. Did you copy paste to the map form?"
+75:        ThrowError CustomError.INVALID_FORM_INPUT, "mdlPresentation.FromFormToClass", "Cell C13 contains illegal input. Did you copy paste to the map form?"
 76:    End If
     
 78:    MySystem.TechEnv = data(1, 13)                                  '"TechEnv"
@@ -456,7 +456,7 @@ Public Sub DisplayArray(sArrayToDisplay() As String, sListOfSystems() As String,
 455:    ActiveSheet.Range("B3") = Join(sEmployees, ",")
     
     'put the info on the sheet
-458:    ActiveSheet.Range(Cells(8, 3), Cells(UBound(sArrayToDisplay, 1) + 8, UBound(sArrayToDisplay, 2) + 3)) = sArrayToDisplay
+458:    ActiveSheet.Range(Cells(1, 1), Cells(UBound(sArrayToDisplay, 1) + 8, UBound(sArrayToDisplay, 2) + 3)) = sArrayToDisplay
     
 'Exit Point
 DisplayArray_Exit:
@@ -602,7 +602,7 @@ Public Function isValidSystemForm() As Boolean
 601:    If ActiveSheet.Range("a1").value <> "מיפוי מערכת" Then isValidSystemForm = False
     
     'no system name
-604:    If Len(ActiveSheet.Cell("c2").value) = 0 Then isValidSystemForm = False
+604:    If Len(ActiveSheet.Range("c2").value) = 0 Then isValidSystemForm = False
     
 606:    isValidSystemForm = result
 607: End Function
