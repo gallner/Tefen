@@ -1,5 +1,5 @@
 Attribute VB_Name = "mdlGit"
-Option Explicit
+
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 '                   Sub SaveCodeModules(dir As String)
