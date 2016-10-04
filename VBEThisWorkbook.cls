@@ -37,7 +37,7 @@ Sub CleanUpSheets()
     
     Dim i As Integer
     
-    'Application.DisplayAlerts = False
+    Application.DisplayAlerts = False
     
     Dim sht As Variant
     For Each sht In ActiveWorkbook.Worksheets
@@ -61,5 +61,5 @@ Sub CleanUpSheets()
        
     Next
     
-    'Application.DisplayAlerts = True
+    Application.DisplayAlerts = True
 End Sub
