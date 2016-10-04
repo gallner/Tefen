@@ -1,0 +1,77 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+	<ribbon>
+		<tabs>
+			<tab id="SystemMap" label="System Mapping" insertAfterMso="TabHome">
+				<group id="insert" label="Insert New System" imageMso="QueryShowTable">
+					<button id="NewSystemForm" label="Open a new Form" size="large" onAction="RbnNewForm" imageMso="QueryShowTable" />
+					<button id="InsertToDB" label="Insert Data to DB" size="large" onAction="RbnInsertToDb" imageMso="SharingOpenNotesFolder" />
+				</group>
+				<group id="Update" label="Update" imageMso="PivotTableChangeDataSource">
+					<button id="UpdateSystemToDB" label="Update System in DB" size="large" onAction="RbnUpdateSysInDB" imageMso="TableDrawTable" />
+				</group>
+				<group id="Delete" label="Delete" imageMso="TableDeleteRowsAndColumnsMenuWord">
+					<button id="PermanentDelete" label="Permanenet Delete" size="large" onAction="RbnPermanentDelete" imageMso="Delete" />
+					<button id="ArchiveSystem" label="Archive System" size="large" onAction="RbnArchiveSystem" 													imageMso="TableDeleteRowsAndColumnsMenuWord" />
+				</group>
+				<group id="Search" label="Search" imageMso="AdpDiagramTableModesMenu">
+					<button id="SearchSystem" label="Search System" size="large" onAction="RbnSearchSystem" imageMso="FindDialog"/>
+					<button id="SearchArchive" label="Search in Archive" size="large" onAction="RbnSearchArchive" imageMso="DatasheetColumnLookup" />
+				</group>
+				
+				<group id="View" label="View" imageMso="AdpDiagramArrangeTables">
+					<button id="ViewSystemMap" label="View System Map" size="large" onAction="RbnViewSystemMap" imageMso="MeetingsWorkspace"/>
+					<button id="ViewArchiveMap" label="View Archive Map" size="large" onAction="RbnViewArchiveMap" imageMso="MenuPublish"/>
+					
+				</group>
+	
+				<group id="Tools" label="Tools" imageMso="AdpDiagramArrangeTables">
+					<button id="FindEmployeeBySkill" label="Employees by Skills" size="large" onAction="RbnFindEmployeeBySkill" imageMso="MeetingsWorkspace"/>
+					<button id="SkillGap" label="Search Skill Gap" size="large" onAction="RbnSkillGap" imageMso="ZoomPrintPreviewExcel"/>
+				</group>
+				<group id="Employees" label="Employees" imageMso="AdpDiagramArrangeTables">
+					<button id="AddEmployee" label="Add New Employee" size="large" onAction="RbnAddNewEmployee" imageMso="MeetingsWorkspace"/>
+					<button id="ArchiveEmployee" label="Archive Employee" size="large" onAction="RbnArchiveEmployee" imageMso="TableDeleteRowsAndColumnsMenuWord"/>
+					<button id="DeleteEmployee" label="Delete Employee" size="large" onAction="RbnDeleteEmployee" imageMso="Delete"/>		
+					<separator id="separator" />
+					<box id="boxEmployee" boxStyle="vertical">
+						<editBox id="editboxFindEmployee" onChange="SetTextValue"/>
+						<button id="FindEmployee" label="Search" onAction="RbnFindEmployee" imageMso="FindDialog" />
+					</box>
+				</group>
+
+				<group id="SaveExit" label="Save Work" imageMso="FileSave">
+					<button id="SaveAndExit" label="Save Work and Exit" size="large" onAction="RbnSaveAndExit" imageMso="SaveAndClose"/>
+				<button id="Save" label="Save Work" size="large" onAction="RbnSaveNoExit" imageMso="FileSave"/>
+					
+				</group>
+					<group id="BindDB" label="DB Connection" imageMso="FileManageMenu">
+					<button id="Bind" label="Attach DB" size="large" onAction="RbnGetDBPath" imageMso="FileManageMenu"/>
+					<button id="Connect" label="Test Connection" size="large" onAction="RbnConnectToDb" imageMso="DatabaseCopyDatabaseFile"/>
+				</group>
+					<group id="Reload" label="Reload Data" imageMso="ListSynchronize">
+					<button id="ReloadSystemMap" label="Reload System Map" size="large" onAction="RbnReloadSystemMap" imageMso="AccessRelinkLists"/>
+					<button id="ReloadArchiveMap" label="Reload Archive Map" size="large" onAction="RbReloadArchiveMap" imageMso="TableSharePointListsRefreshList"/>
+					<button id="ReloaLists" label="Reload Lists" size="large" onAction="RbReloadLists" imageMso="ImportMoreMenu"/>
+				</group>
+				<group id="Administration" label="General" imageMso="TableSharePointListsModifyColumnsAndSettings">
+					<menu id="mnuAdministration" label="Global Params">
+					<button id="AddSkill" label="Add Skill" onAction="RbnAddSkill" imageMso="FunctionsDateTimeInsertGallery"/>
+					<button id="AddInterfaceCategory" label="Interface Category"  onAction="RbnAddInrerfaceCategory" imageMso="FunctionsFinancialInsertGallery"/>
+					<button id="AddSInterfceType" label="Interface Type"  onAction="RbnAddInterfaceType" imageMso="FunctionsLogicalInsertGallery"/>
+					<button id="AddInterfaceKnowledge" label="Interface Knowledge Level"  onAction="RbnAddInterfaceKnowledgeLevel" imageMso="FunctionsTextInsertGallery"/>
+					<button id="AddSkillType" label="Skill Type"  onAction="RbnAddSkillType" imageMso="FunctionsRecentlyUsedtInsertGallery"/>
+					<button id="AddSkillKnowledgeLevel" label="Skill Knowledge Level"  onAction="RbnAddSkillKnowledgeLevel" imageMso="FunctionsLookupReferenceInsertGallery"/>
+					</menu>
+					<menu id="mnuTech" label="Tech Mode">
+						<button id="btnTechMode" label="Tech Mode" onAction="RbnEnterTechMode" imageMso="TableSharePointListsModifyColumnsAndSettings"/>
+					</menu>
+					<menu id="mnuHelp" label="Help">
+						<button id="btnAbout" label="About" onAction="RbnHelpAbout" imageMso="TentativeAcceptInvitation"/>
+					</menu>
+				</group>
+
+			</tab>
+
+		</tabs>
+	</ribbon>
+</customUI>
